@@ -1,0 +1,289 @@
+/* * * * LAYOUT * * * */
+
+/* Variables */
+$gray-base:              #000 !default;
+$gray-darker:            lighten($gray-base, 13.5%) !default; // #222
+$gray-dark:              lighten($gray-base, 20%) !default;   // #333
+$gray:                   lighten($gray-base, 33.5%) !default; // #555
+$gray-lightish:          lighten($gray-base, 37%) !default;
+$gray-light:             lighten($gray-base, 46.7%) !default; // #777
+$gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
+
+$brand-primary:           darken(#647a6e, 6.5%) !default; // #337ab7
+//$brand-primary:           #f3452e !default;
+$brand-darker:            lighten($brand-primary, 13.5%) !default; // #222
+$brand-dark:              lighten($brand-primary, 20%) !default;   // #333
+$brand:                   lighten($brand-primary, 33.5%) !default; // #555
+$brand-light:             lighten($brand-primary, 46.7%) !default; // #777
+$brand-lighter:           lighten($brand-primary, 93.5%) !default; // #eee
+
+$brand-success:         #54C571 !default; // prev: #5cb85c
+$brand-info:            #4EE2EC !default; // prev: #5bc0de
+$brand-warning:         #ED594E !default; // prev: #f0ad4e
+$brand-danger:          #d9534f !default;
+$brand-anti:            #fff !default;
+
+// use to overwrite background bleed
+$card-background:       #fff !default;
+
+// size for mobile media query trigger
+$mobile-width:          600px;
+
+// font sizes   ** DELETE UNNECESSARY HERE **
+$font-body_text:             16px;
+$font-header_btn:            1.7em;
+$font-header_nametag:        2.5em;
+$font-footer_image:          1.2em;
+$font-sidebar_header:        2em;
+$font-about_sidebar:         1.1em;
+$font-about_image:           1.2em;
+$font-about_text:            2em;
+
+$font-mobile-text:           1.5em;
+$font-mobile-header:         2.5em;
+$font-mobile-subheader:      1.9em;
+$font-mobile-footer_text:    2.5em;
+$font-mobile-footer_image:   1em;
+$font-mobile-header_nav:     1.2em;
+
+// z-indeces
+$z-index-dropdown:           3;
+/* * */
+
+/* Toplevel */
+body {
+  width: 100%;
+  height: 100%;
+  color: $gray-dark; // prev: $gray-lightish
+  background-color: $brand-light; // prev: $gray-light
+  font-size: $font-body_text;
+}
+
+ul { /* reset bullet padding */
+  margin: 0;
+  padding: 0;
+}
+
+a:link {
+  color: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+.invisible {
+  visibility: hidden;
+}
+/* * */
+
+/* Layout */
+// page container
+.page-container {
+  width: 80%;
+}
+
+// padding
+.padding-light {
+  padding: 5px;
+}
+
+.padding-medium {
+  padding: 10px;
+}
+
+.padding-heavy {
+  padding: 15px;
+}
+
+.padding-light_percent {
+  padding: 3%;
+}
+
+.padding-medium_percent {
+  padding: 6%;
+}
+
+// margin
+.margin-light {
+  margin: 5px;
+}
+
+.margin-medium {
+  margin: 10px;
+}
+
+.margin-heavy {
+  margin: 15px;
+}
+
+// boxmod (padding & margin)
+.boxmod-light {
+  padding: 5px;
+  margin: 5px;
+}
+
+.boxmod-medium {
+  padding: 10px;
+  margin: 10px;
+}
+
+.boxmod-heavy {
+  padding: 15px;
+  margin: 15px;
+}
+
+// topMargin
+.top-margin_light {
+  margin-top: 2%;
+}
+
+.top-margin_medium {
+  margin-top: 5%;
+}
+
+.top-margin_heavy {
+  margin-top: 10%;
+}
+
+// stackedPadding (more left and right, less top and bottom)
+.stacked-padding_light {
+  padding: 1% 5% 3% 5%;
+}
+
+.stacked-padding_medium {
+  padding: 3% 10% 3% 10%;
+}
+
+.stacked-padding_heavy {
+  padding: 5% 15% 5% 15%;
+}
+
+// flex
+.flex-container {
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex-container($none) {
+  // this mixin is a hacky workaround for media queries
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex($type) {
+  -webkit-flex: $type;
+          flex: $type;
+}
+
+@mixin flex-direction($placement) {
+  -webkit-flex-direction: $placement;
+          flex-direction: $placement;
+}
+
+@mixin flex-justify-content($placement) {
+  -webkit-justify-content: $placement;
+          justify-content: $placement;
+}
+
+@mixin flex-align-items($placement) {
+  -webkit-align-items: $placement;
+          align-items: $placement;
+}
+
+@mixin flex-align-self($placement) {
+  -webkit-align-self: $placement;
+          align-self: $placement;
+}
+
+// border radius
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+// divider
+.divider {
+  @extend .flex-container;
+
+  @include flex-justify-content(center);
+
+  margin: 5% 0 5% 10%;
+  width: 80%;
+  height: 2px;
+  background-color: $gray-light;
+}
+/* * */
+
+/* * * * * * * * * * * */
+
+/* * * * MODULES * * * */
+
+/* home */
+.home {
+  @extend .page-container;
+  @extend .flex-container;
+
+  @include flex-justify-content(space-around);
+}
+
+/* * */
+
+/* * * * * * * * * * * */
+
+// DELETE THESE BOXES LATER
+.boxa {
+  background-color: $brand-primary;
+  height: 50px;
+  width: 50px;
+}
+
+.boxb {
+  background-color: $brand-dark;
+  height: 50px;
+  width: 50px;
+}
+
+.boxc {
+  background-color: $brand-darker;
+  height: 50px;
+  width: 50px;
+}
+
+.boxd {
+  background-color: $brand;
+  height: 50px;
+  width: 50px;
+}
+
+.boxe {
+  background-color: $brand-light;
+  height: 50px;
+  width: 50px;
+}
+
+.boxf {
+  background-color: $brand-lighter;
+  height: 50px;
+  width: 50px;
+}
+
+.box7 {
+  background-color: $brand-success;
+  height: 50px;
+  width: 50px;
+}
+
+.box8 {
+  background-color: $brand-info;
+  height: 50px;
+  width: 50px;
+}
+
+.box9 {
+  background-color: $brand-warning;
+  height: 50px;
+  width: 50px;
+}

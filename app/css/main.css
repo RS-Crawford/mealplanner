@@ -1,3 +1,152 @@
+/* * * * LAYOUT * * * */
+/* Variables */
+/* * */
+/* Toplevel */
 body {
-  background: blue;
-}
+  width: 100%;
+  height: 100%;
+  color: #333333;
+  background-color: #d1dad5;
+  font-size: 16px; }
+
+ul {
+  /* reset bullet padding */
+  margin: 0;
+  padding: 0; }
+
+a:link {
+  color: inherit; }
+
+a {
+  color: inherit; }
+
+.invisible {
+  visibility: hidden; }
+
+/* * */
+/* Layout */
+.page-container, .home {
+  width: 80%; }
+
+.padding-light {
+  padding: 5px; }
+
+.padding-medium {
+  padding: 10px; }
+
+.padding-heavy {
+  padding: 15px; }
+
+.padding-light_percent {
+  padding: 3%; }
+
+.padding-medium_percent {
+  padding: 6%; }
+
+.margin-light {
+  margin: 5px; }
+
+.margin-medium {
+  margin: 10px; }
+
+.margin-heavy {
+  margin: 15px; }
+
+.boxmod-light {
+  padding: 5px;
+  margin: 5px; }
+
+.boxmod-medium {
+  padding: 10px;
+  margin: 10px; }
+
+.boxmod-heavy {
+  padding: 15px;
+  margin: 15px; }
+
+.top-margin_light {
+  margin-top: 2%; }
+
+.top-margin_medium {
+  margin-top: 5%; }
+
+.top-margin_heavy {
+  margin-top: 10%; }
+
+.stacked-padding_light {
+  padding: 1% 5% 3% 5%; }
+
+.stacked-padding_medium {
+  padding: 3% 10% 3% 10%; }
+
+.stacked-padding_heavy {
+  padding: 5% 15% 5% 15%; }
+
+.flex-container, .divider, .home {
+  display: -webkit-flex;
+  display: flex; }
+
+.divider {
+  -webkit-justify-content: center;
+  justify-content: center;
+  margin: 5% 0 5% 10%;
+  width: 80%;
+  height: 2px;
+  background-color: #777777; }
+
+/* * */
+/* * * * * * * * * * * */
+/* * * * MODULES * * * */
+/* home */
+.home {
+  -webkit-justify-content: space-around;
+  justify-content: space-around; }
+
+/* * */
+/* * * * * * * * * * * */
+.boxa {
+  background-color: #55685e;
+  height: 50px;
+  width: 50px; }
+
+.boxb {
+  background-color: #879c90;
+  height: 50px;
+  width: 50px; }
+
+.boxc {
+  background-color: #748d80;
+  height: 50px;
+  width: 50px; }
+
+.boxd {
+  background-color: #acbbb3;
+  height: 50px;
+  width: 50px; }
+
+.boxe {
+  background-color: #d1dad5;
+  height: 50px;
+  width: 50px; }
+
+.boxf {
+  background-color: white;
+  height: 50px;
+  width: 50px; }
+
+.box7 {
+  background-color: #54C571;
+  height: 50px;
+  width: 50px; }
+
+.box8 {
+  background-color: #4EE2EC;
+  height: 50px;
+  width: 50px; }
+
+.box9 {
+  background-color: #ED594E;
+  height: 50px;
+  width: 50px; }
+
+/*# sourceMappingURL=main.css.map */
