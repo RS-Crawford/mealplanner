@@ -3,16 +3,21 @@
 /* * */
 /* Toplevel */
 body {
+  font-family: "Verdana", sans-serif;
   width: 100%;
   height: 100%;
-  color: #333333;
+  color: #222222;
   background-color: #d1dad5;
   font-size: 16px; }
 
 ul {
-  /* reset bullet padding */
+  /* reset bullet padding, no bullets */
+  list-style: none;
   margin: 0;
   padding: 0; }
+
+header {
+  text-align: center; }
 
 a:link {
   color: inherit; }
@@ -21,12 +26,13 @@ a {
   color: inherit; }
 
 .invisible {
-  visibility: hidden; }
+  display: none; }
 
 /* * */
 /* Layout */
 .page-container, .home {
-  width: 80%; }
+  width: 80%;
+  margin-left: 10%; }
 
 .padding-light {
   padding: 5px; }
@@ -34,7 +40,7 @@ a {
 .padding-medium {
   padding: 10px; }
 
-.padding-heavy {
+.padding-heavy, .btn, .btn-remove, .list-btn, .list-btn_edit, .list-btn_delete {
   padding: 15px; }
 
 .padding-light_percent {
@@ -43,7 +49,7 @@ a {
 .padding-medium_percent {
   padding: 6%; }
 
-.margin-light {
+.margin-light, .btn, .btn-remove, .list-btn, .list-btn_edit, .list-btn_delete {
   margin: 5px; }
 
 .margin-medium {
@@ -82,7 +88,7 @@ a {
 .stacked-padding_heavy {
   padding: 5% 15% 5% 15%; }
 
-.flex-container, .divider, .home {
+.flex-container, .divider, .home, .list-wrapper section, .list-btns {
   display: -webkit-flex;
   display: flex; }
 
@@ -92,15 +98,56 @@ a {
   margin: 5% 0 5% 10%;
   width: 80%;
   height: 2px;
-  background-color: #777777; }
+  background-color: #222222; }
 
 /* * */
 /* * * * * * * * * * * */
 /* * * * MODULES * * * */
+/* buttons */
+.btn, .btn-remove, .list-btn, .list-btn_edit, .list-btn_delete {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px; }
+
+.btn-remove {
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  border-radius: 30px;
+  border: 5px solid #ED594E;
+  font-style: bold;
+  font-size: 0.1em;
+  margin-bottom: 20px;
+  color: #ED594E;
+  background-color: transparent; }
+
+/***/
 /* home */
 .home {
   -webkit-justify-content: space-around;
   justify-content: space-around; }
+
+/***/
+/* list */
+.list-wrapper header {
+  font-size: 5em; }
+.list-wrapper section {
+  -webkit-justify-content: space-around;
+  justify-content: space-around; }
+
+.list {
+  font-size: 4em; }
+
+.list-btns {
+  -webkit-flex-direction: column;
+  flex-direction: column; }
+
+.list-btn_edit {
+  background-color: #4EE2EC; }
+
+.list-btn_delete {
+  background-color: #ED594E; }
 
 /* * */
 /* * * * * * * * * * * */

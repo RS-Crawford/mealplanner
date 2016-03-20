@@ -3,6 +3,7 @@
 <html>
 
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="../css/main.css">
 </head>
 
@@ -12,20 +13,24 @@
     <header class="invisible">Home - Current Shopping List and Navigation</header>
     <section class="list-wrapper">
       <header>Current List:</header>
+      <div class="divider"></div>
       <section>
         <ul class="list">
-          <li>item a <button>Remove</button></li>
-          <li>item b <button>Remove</button></li>
-          <li>item c <button>Remove</button></li>
+          <!-- we actually want btn-remove to be a font-icon I think -->
+          <li>item a <button class="btn-remove">X</button></li>
+          <li>item b <button class="btn-remove">X</button></li>
+          <li>item c <button class="btn-remove">X</button></li>
         </ul>
-        <button>Edit</button>
-        <button>Clear</button>
+        <section class="list-btns">
+          <button class="list-btn_edit">Edit</button>
+          <button class="list-btn_delete">Clear</button>
+        </section>
       </section>
     </section>
     <nav>
       <header class="invisible">Navigation Buttons</header>
-      <button>Lists</button>
-      <button>Meals</button>
+      <button class="list-btn_lists">Lists</button>
+      <button class="list-btn_meals">Meals</button>
     </nav>
   </section>
 
