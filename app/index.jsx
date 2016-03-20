@@ -1,4 +1,4 @@
-require('./main.css');
+require('./css/main.css');
 
 import React from 'react';
 import ReactDOM from 'react-dom';
