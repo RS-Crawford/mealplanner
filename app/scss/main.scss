@@ -30,6 +30,7 @@ $card-background:       #fff !default;
 $mobile-width:          600px;
 
 // font sizes   ** DELETE UNNECESSARY HERE **
+// OLD GENERAL
 $font-body_text:             16px;
 $font-header_btn:            1.7em;
 $font-header_nametag:        2.5em;
@@ -38,13 +39,26 @@ $font-sidebar_header:        2em;
 $font-about_sidebar:         1.1em;
 $font-about_image:           1.2em;
 $font-about_text:            2em;
+// ***** //
 
+// NEW GENERAL
+$font-content_header:        5em;
+$font-content:               4em;
+// ***** //
+
+// OLD MOBILE
 $font-mobile-text:           1.5em;
 $font-mobile-header:         2.5em;
 $font-mobile-subheader:      1.9em;
 $font-mobile-footer_text:    2.5em;
 $font-mobile-footer_image:   1em;
 $font-mobile-header_nav:     1.2em;
+// ***** //
+
+// NEW MOBILE
+$font-mobile-content_header: 3em;
+$font-mobile-content:        2em;
+// *****//
 
 // z-indeces
 $z-index-dropdown:           3;
@@ -58,6 +72,7 @@ body {
   color: $gray-darker; // prev: $gray-lightish
   background-color: $brand-light; // prev: $gray-light
   font-size: $font-body_text;
+  box-sizing: border-box;
 }
 
 ul { /* reset bullet padding, no bullets */
@@ -88,6 +103,13 @@ a {
 .page-container {
   width: 80%;
   margin-left: 10%;
+}
+
+@media (max-width: $mobile-width), handheld {
+  .page-container {
+    width: 90%;
+    margin-left: 5%;
+  }
 }
 
 // padding
@@ -224,6 +246,16 @@ a {
 }
 /* * */
 
+/* Shadow */
+.shadow-light {
+  box-shadow: 3px 3px 1px 0px $gray;
+}
+.shadow-none {
+  box-shadow: 0px 0px 0px 0px transparent;
+}
+
+/* * */
+
 /* * * * * * * * * * * */
 
 /* * * * MODULES * * * */
@@ -232,12 +264,16 @@ a {
 .btn {
   @extend .margin-light;
   @extend .padding-heavy;
+  @extend .shadow-light;
 
-  @include border-radius(5px);
+  @include border-radius(7px);
+  border: none;
+  color: $gray-darker;
 }
 
 .btn-remove {
   @extend .btn;
+  @extend .shadow-none;
 
   @include border-radius(30px);
 
@@ -257,34 +293,74 @@ a {
 
   @include flex-justify-content(space-around);
 }
+
+.home-nav {
+  @extend .flex-container;
+  @extend .top-margin_medium;
+
+  @include flex-direction(column);
+  @include flex-justify-content(space-around);
+}
+
+.home-btn_nav {
+  @extend .btn;
+
+  font-size: $font-content;
+  background-color: $brand-success;
+}
+
+@media (max-width: $mobile-width), handheld {
+  .home {
+    @include flex-direction(column-reverse);
+  }
+
+  .home-nav {
+    @include flex-direction(row);
+  }
+
+  .home-btn_nav {
+    font-size: $font-mobile-content;
+  }
+}
 /***/
 
 /* list */
 
 .list-wrapper {
+  @extend .shadow-light;
+  @extend .padding-light_percent;
+  @extend .top-margin_medium;
+
+  background-color: $card-background;
+
   header {
-    font-size: 5em;
-  }
-
-  section {
-    @extend .flex-container;
-
-    @include flex-justify-content(space-around);
+    font-size: $font-content_header;
   }
 }
 
+.list-content {
+  @extend .flex-container;
+
+  @include flex-justify-content(space-around);
+}
+
 .list {
-  font-size: 4em;
+  @extend .padding-heavy;
+  
+  font-size: $font-content;
 }
 
 .list-btns {
   @extend .flex-container;
 
   @include flex-direction(column);
+  @include flex-justify-content(flex-start);
 }
 
 .list-btn {
   @extend .btn;
+
+  font-size: $font-content;
 }
 
 .list-btn_edit {
@@ -297,6 +373,31 @@ a {
   @extend .list-btn;
 
   background-color: $brand-warning;
+}
+
+@media (max-width: $mobile-width), handheld {
+  .list-wrapper {
+    header {
+      font-size: $font-mobile-content_header;
+    }
+  }
+
+  .list-content {
+    @include flex-direction(column-reverse);
+  }
+
+  .list {
+    font-size: $font-mobile-content;
+  }
+
+  .list-btns {
+    @include flex-direction(row);
+    @include flex-justify-content(space-around);
+  }
+
+  .list-btn {
+    font-size: $font-mobile-content;
+  }
 }
 
 /* * */
